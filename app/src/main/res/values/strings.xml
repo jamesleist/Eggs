@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Eggs</string>
+    <string name="add1">Add 1 Egg</string>
+    <string name="add2">Add 2 Eggs</string>
+    <string name="subtract1">Subtract 1 Egg</string>
+    <string name="breakfast">Make Breakfast</string>
 </resources>
