@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.gordon.eggs.MainActivity">
 
-
     <Button
         android:id="@+id/addTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="57dp"
         android:text="@string/add2"
+        android:onClick="addTwoEggs"
         android:layout_below="@+id/addOne"
         android:layout_alignEnd="@+id/addOne" />
 
@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="71dp"
+        android:onClick="addOneEgg"
         android:text="@string/add1"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -30,6 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/breakfast"
+        android:onClick="makeBreakfast"
         android:layout_below="@+id/subOne"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp" />
@@ -39,7 +41,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/subtract1"
+        android:onClick="subtractOneEgg"
         android:layout_below="@+id/addTwo"
         android:layout_alignStart="@+id/breakfast"
         android:layout_marginTop="45dp" />
+
 </RelativeLayout>
