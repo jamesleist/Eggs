@@ -15,6 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.example.gordon.eggs.ADD_EGGS" />
+                <action android:name="com.example.gordon.eggs.MAKE_BREAKFAST" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
