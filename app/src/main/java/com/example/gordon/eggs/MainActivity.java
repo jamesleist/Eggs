@@ -1,7 +1,6 @@
 package com.example.gordon.eggs;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         makeEggIntent("1");
     }
 
-    public void addTwoEgg(View view) {
+    public void addTwoEggs(View view) {
         makeEggIntent("2");
     }
 
