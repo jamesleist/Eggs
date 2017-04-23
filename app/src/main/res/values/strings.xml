@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Eggs</string>
-    <string name="add1">Add 1 Egg</string>
-    <string name="add2">Add 2 Eggs</string>
-    <string name="subtract1">Subtract 1 Egg</string>
-    <string name="breakfast">Make Breakfast</string>
+    <string name="add1">1 added!</string>
+    <string name="add2">2 added!</string>
+    <string name="subtract1">1 subtracted!</string>
+    <string name="breakfast_omelet">We are having omelets, we have </string>
+    <string name="breakfast_gruel">We are having gruel, we have </string>
+    <string name="eggs_available"> eggs available.</string>
 </resources>
