@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Eggs</string>
+    <string name="breakfast">Make Breakfast</string>
     <string name="add1">1 added!</string>
     <string name="add2">2 added!</string>
     <string name="subtract1">1 subtracted!</string>

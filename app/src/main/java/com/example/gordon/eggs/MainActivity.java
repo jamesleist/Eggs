@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Intent myIntent;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void makeBreakfast(View view) {
         myIntent = new Intent("com.example.gordon.eggs.MAKE_BREAKFAST");
+        Toast.makeText(this, "This is my Toast message!",
+                Toast.LENGTH_LONG).show();
         sendBroadcast(myIntent);
     }
 

@@ -21,6 +21,8 @@
                 <action android:name="com.example.gordon.eggs.MAKE_BREAKFAST" />
             </intent-filter>
         </receiver>
+
+        <service android:name = ".MyService"></service>
     </application>
 
 </manifest>
