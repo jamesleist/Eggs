@@ -15,22 +15,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addOneEgg(View view) {
-        makeEggIntent("1");
+        makeEggIntent(Constants.ADD_ONE_EGG);
     }
 
     public void addTwoEggs(View view) {
-        makeEggIntent("2");
+        makeEggIntent(Constants.ADD_TWO_EGGS);
     }
 
     public void subtractOneEgg(View view) {
-        makeEggIntent("-1");
+        makeEggIntent(Constants.SUB_ONE_EGG);
     }
 
     public void makeBreakfast(View view) {
         myIntent = new Intent("com.example.gordon.eggs.MAKE_BREAKFAST");
         sendBroadcast(myIntent);
     }
-    private void makeEggIntent(String number_of_eggs){
+
+    private void makeEggIntent(int number_of_eggs){
         myIntent = new Intent("com.example.gordon.eggs.ADD_EGGS");
         myIntent.putExtra("number_of_eggs", number_of_eggs);
         sendBroadcast(myIntent);

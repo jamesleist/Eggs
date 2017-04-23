@@ -11,16 +11,16 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Intent myIntent = new Intent(context, MyService.class);
         Bundle breakfastBundle = intent.getExtras();
-        String number_of_eggs = breakfastBundle.getString("number_of_eggs");
+        int number_of_eggs = breakfastBundle.getInt("number_of_eggs");
         if(intent.getAction().equals("com.example.gordon.eggs.MAKE_BREAKFAST")){
-            myIntent.putExtra("Eggs", "make_breakfast");
-        } else if(number_of_eggs != null){
+            myIntent.putExtra("Eggs", Constants.MAKE_BREAKFAST);
+        } else if(number_of_eggs != Constants.NULL_VALUE){
             switch (number_of_eggs){
-                case "1":  myIntent.putExtra("Eggs", 1);
+                case 1:  myIntent.putExtra("Eggs", Constants.ADD_ONE_EGG);
                     break;
-                case "2":  myIntent.putExtra("Eggs", 2);
+                case 2:  myIntent.putExtra("Eggs", Constants.ADD_TWO_EGGS);
                     break;
-                case "-1": myIntent.putExtra("Eggs", -1);
+                case -1: myIntent.putExtra("Eggs", Constants.SUB_ONE_EGG);
                     break;
                 default:
                     break;
