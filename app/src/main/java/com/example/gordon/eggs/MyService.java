@@ -10,15 +10,11 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import java.util.Random;
+
 public class MyService extends Service {
     private SharedPreferences.Editor editor;
     private int eggNumber;
-    //private String addOne = getString(R.string.add1);
-    //private String addTwo = getString(R.string.add2);
-    //private String subOne = getString(R.string.subtract1);
-    //private String breakfastOmelet = getString(R.string.breakfast_omelet);
-    //private String getBreakfastGruel = getString(R.string.breakfast_gruel);
-    //private String eggsAvailable = getString(R.string.eggs_available);
 
     public int onStartCommand(Intent intent, int flags, int startId) {
 
@@ -52,7 +48,6 @@ public class MyService extends Service {
                 break;
             case Constants.MAKE_BREAKFAST:
                 if(eggNumber < Constants.NUM_EGGS_OMELET){
-                    eggNumber = 0;
                     updateSharedPreference();
                     makeBreakfastNotification(false);
                 } else {
@@ -80,15 +75,14 @@ public class MyService extends Service {
     }
 
     private void makeBreakfastNotification(boolean enough_for_omelet){
-        String notificationMessage = (enough_for_omelet) ? ("We're having omletes, we have") : ("We're having gruel, we have");
-        notificationMessage += eggNumber + "eggs available";
+        String notificationMessage = (enough_for_omelet) ? ("We're having omletes, we have ") : ("We're having gruel, we have ");
+        notificationMessage += eggNumber + " eggs available";
         doNotification(notificationMessage);
     }
 
-
-    private int MYNOTIFICATION = 1;
-    public void doNotification(String description) {
-        boolean useIndeterminateProgressBar = false;
+    private void doNotification(String description) {
+        Random random = new Random();
+        int MYNOTIFICATION = random.nextInt(500) + 1;
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         Notification noti = new Notification.Builder(this)

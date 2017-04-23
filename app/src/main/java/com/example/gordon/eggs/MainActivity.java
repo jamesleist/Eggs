@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void makeBreakfast(View view) {
         myIntent = new Intent("com.example.gordon.eggs.MAKE_BREAKFAST");
-        Toast.makeText(this, "This is my Toast message!",
-                Toast.LENGTH_LONG).show();
         sendBroadcast(myIntent);
     }
 

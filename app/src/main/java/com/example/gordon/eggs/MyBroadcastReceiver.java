@@ -10,7 +10,6 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Intent myIntent = new Intent(context, MyService.class);
-       // Bundle breakfastBundle = intent.getExtras();
         int number_of_eggs = intent.getIntExtra("number_of_eggs", 0);
         if(intent.getAction().equals("com.example.gordon.eggs.MAKE_BREAKFAST")){
             myIntent.putExtra("Eggs", Constants.MAKE_BREAKFAST);
