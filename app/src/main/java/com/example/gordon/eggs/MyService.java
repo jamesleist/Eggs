@@ -13,6 +13,12 @@ import android.view.View;
 public class MyService extends Service {
     private SharedPreferences.Editor editor;
     private int eggNumber;
+    //private String addOne = getString(R.string.add1);
+    //private String addTwo = getString(R.string.add2);
+    //private String subOne = getString(R.string.subtract1);
+    //private String breakfastOmelet = getString(R.string.breakfast_omelet);
+    //private String getBreakfastGruel = getString(R.string.breakfast_gruel);
+    //private String eggsAvailable = getString(R.string.eggs_available);
 
     public int onStartCommand(Intent intent, int flags, int startId) {
 
@@ -32,17 +38,17 @@ public class MyService extends Service {
             case Constants.ADD_ONE_EGG:
                 eggNumber = Constants.ADD_ONE_EGG + eggNumber;
                 updateSharedPreference();
-                addEggsNotification("R.strings.add1");
+                addEggsNotification("One added!");
                 break;
             case Constants.ADD_TWO_EGGS:
                 eggNumber = Constants.ADD_TWO_EGGS + eggNumber;
                 updateSharedPreference();
-                addEggsNotification("R.strings.add2");
+                addEggsNotification("Two added!");
                 break;
             case Constants.SUB_ONE_EGG:
                 eggNumber = (eggNumber == Constants.NULL_VALUE) ? eggNumber : Constants.SUB_ONE_EGG + eggNumber;
                 updateSharedPreference();
-                addEggsNotification("R.strings.subtract1");
+                addEggsNotification("One subtracted!");
                 break;
             case Constants.MAKE_BREAKFAST:
                 if(eggNumber < Constants.NUM_EGGS_OMELET){
@@ -74,8 +80,8 @@ public class MyService extends Service {
     }
 
     private void makeBreakfastNotification(boolean enough_for_omelet){
-        String notificationMessage = (enough_for_omelet) ? ("R.strings.breakfast_omelet") : ("R.strings.breakfast_gruel");
-        notificationMessage += eggNumber + "R.strings.eggs_available";
+        String notificationMessage = (enough_for_omelet) ? ("We're having omletes, we have") : ("We're having gruel, we have");
+        notificationMessage += eggNumber + "eggs available";
         doNotification(notificationMessage);
     }
 
