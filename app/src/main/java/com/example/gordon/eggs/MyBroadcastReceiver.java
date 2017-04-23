@@ -14,13 +14,13 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         int number_of_eggs = breakfastBundle.getInt("number_of_eggs");
         if(intent.getAction().equals("com.example.gordon.eggs.MAKE_BREAKFAST")){
             myIntent.putExtra("Eggs", Constants.MAKE_BREAKFAST);
-        } else if(number_of_eggs != Constants.NULL_VALUE){
+        } else {
             switch (number_of_eggs){
-                case 1:  myIntent.putExtra("Eggs", Constants.ADD_ONE_EGG);
+                case Constants.ADD_ONE_EGG:  myIntent.putExtra("Eggs", Constants.ADD_ONE_EGG);
                     break;
-                case 2:  myIntent.putExtra("Eggs", Constants.ADD_TWO_EGGS);
+                case Constants.ADD_TWO_EGGS:  myIntent.putExtra("Eggs", Constants.ADD_TWO_EGGS);
                     break;
-                case -1: myIntent.putExtra("Eggs", Constants.SUB_ONE_EGG);
+                case Constants.SUB_ONE_EGG: myIntent.putExtra("Eggs", Constants.SUB_ONE_EGG);
                     break;
                 default:
                     break;
