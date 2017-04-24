@@ -10,6 +10,8 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import java.util.Random;
+
 public class MyService extends Service {
     private SharedPreferences.Editor editor;
     private int eggNumber;
@@ -46,7 +48,6 @@ public class MyService extends Service {
                 break;
             case Constants.MAKE_BREAKFAST:
                 if(eggNumber < Constants.NUM_EGGS_OMELET){
-                    eggNumber = 0;
                     updateSharedPreference();
                     makeBreakfastNotification(false);
                 } else {
@@ -74,15 +75,16 @@ public class MyService extends Service {
     }
 
     private void makeBreakfastNotification(boolean enough_for_omelet){
+
         String notificationMessage = (enough_for_omelet) ? (Constants.BREAKFAST_OMELET) : (Constants.BREAKFAST_GRUEL);
         notificationMessage += eggNumber + Constants.EGGS_AVAILABLE;
+      
         doNotification(notificationMessage);
     }
 
-
-    private int MYNOTIFICATION = 1;
-    public void doNotification(String description) {
-        boolean useIndeterminateProgressBar = false;
+    private void doNotification(String description) {
+        Random random = new Random();
+        int MYNOTIFICATION = random.nextInt(500) + 1;
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
         Notification noti = new Notification.Builder(this)
